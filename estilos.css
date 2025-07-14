@@ -1,0 +1,48 @@
+.catalogo {
+  margin: 20px;
+  border: 3px solid #0000FF;
+  padding: 8px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  display: block;
+  margin: 5px 0;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: rgb(231, 33, 7);
+  text-decoration: underline;
+}
+.titulo2rojo:hover {
+  color: black; /* color normal */
+  font-size: 1rem; /* tamaño normal */
+  transition: all 0.3s ease; /* hace suave la animación */
+  cursor: pointer; /* cambia el cursor a mano */
+}
+/* Esto aplica al texto de cada categoría cuando pasas el mouse por la tarjeta */
+.categoria-item p {
+  color: black; /* color normal */
+  transition: color 0.3s ease;
+}
+
+.categoria-item:hover p {
+  color: red; /* color al pasar el mouse */
+  font-size: 1rem; /* tamaño más grande al hacer hover */
+}
+
+.categoriatitulo1{ color: black; 
+  font-size: 1rem; 
+  transition: all 0.3s ease; 
+  cursor: pointer; 
+}
+
+.categoria-item p {
+  color: black; 
+  transition: color 0.3s ease;
+  }
+
+ 

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Droguería Demo</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+    :root {
+      --primary-color: #410efa;
+      --text-dark: #212529;
+      --text-light: #ffffff;
+      --bg-light: #f8f9fa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body { background: var(--bg-light); }
+
+    /* ======= HEADER ======= */
+    header {
+      background: var(--primary-color);
+      color: var(--text-light);
+      padding: .5rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { height: 90px; }
+
+    .search-bar { flex: 1; margin: 0 1rem; position: relative; }
+    .search-bar input {
+      width: 100%; padding: .5rem 3rem .5rem 1rem;
+      border-radius: 9999px; border: none;
+    }
+    .search-bar button {
+      position: absolute; right: .5rem; top: 50%; transform: translateY(-50%);
+      background: none; border: none; font-size: 1.25rem; color: var(--primary-color); cursor: pointer;
+    }
+
+    /* ======= NAV ======= */
+    nav { background: #5dabcf; padding: .5rem 1.5rem; display: flex; gap: 1rem; overflow-x: auto; }
+    nav a { color: var(--primary-color); text-decoration: none; font-size: .875rem; white-space: nowrap; }
+
+    /* ======= HERO ======= */
+    .hero { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; padding: 1rem 1.5rem; }
+    .hero img { width: 100%; height: 200px; object-fit: cover; border-radius: .5rem; }
+
+    /* ======= CATEGORÍAS ======= */
+    .categorias { padding: 2rem 1.5rem; text-align: center; }
+
+    .categorias-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 180px);
+      gap: 1.5rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .categorias-grid.centrado {
+      grid-template-columns: repeat(2, 180px);
+    }
+
+    .categoria-item {
+      background: #fff; width: 180px; height: 200px;
+      padding: 1rem; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,.1);
+      border: 4px solid; border-image: linear-gradient(45deg,#74b9ff,#a3e4d7,#fab1a0)1;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .categoria-item img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: .5rem; }
+    .categoria-item p { font-weight: 700; color: #333; font-size: .95rem; text-align:center; }
+
+    @media(max-width: 1024px){
+      .categorias-grid{ grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); }
+    }
+
+    /* ======= ASESORÍA ======= */
+    .asesoria { padding: 2rem 1.5rem; display: flex; justify-content: center; }
+    .asesoria-box { background:#fff; padding:1rem; display:flex; gap:1rem; border-radius:1rem; box-shadow:0 4px 12px rgba(0,0,0,.1); max-width:900px; align-items:center; }
+    .asesoria-box img { width:220px; height:140px; border-radius:.5rem; object-fit:cover; }
+
+    /*======Style borde catergoria=======*/
+    
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <img src="Sin_fondo.jpg" alt="Logo de la empresa" class="logo">
+    <div class="search-bar">
+      <input type="text" placeholder="¿Qué estás buscando?">
+      <button aria-label="Buscar">🔍</button>
+    </div>
+    <img src="login.png" alt="Login" style="width: 30px; height: 30px; display: block; margin: 0 auto;">
+    <a href="#" style="color:var(--text-light);font-weight:600;text-decoration:none;">Mi cuenta</a>
+  </header>
+
+  <!-- NAV -->
+  <nav class=".catalogo" 
+  style="margin: 20px; border: 3px solid #0000FF; padding: 08px;">
+  <a href="#" class="promoRoja">🏷️ Rebajón de Precios</a><br>
+  <a href="#">Mundo L'Oréal</a><br>
+  <a href="#">🧔‍♂️ Detalles para Papá</a><br>
+  <a href="#">&#x1F392;Kit de Viaje</a><br>
+  <a href="#">&#x1F46B;Parche de Amigos</a><br>
+  <a href="#">&#x1F9FC;Higiene Personal</a><br>
+  <a href="#">&#x1F6E1;&#xFE0F;Fortalece Tus Defensas</a><br>
+  <a href="#">🏋️ Nutrición para el Cuerpo</a><br>
+  <a href="#">🚀 ¡Oferta del Mes!</a><br>
+  <a href="#">💊 Salud y Medicamentos</a>
+</nav>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="main-banner"><img src="Banner_principal_pagina.jpg" alt="Banner principal"></div>
+    <div class="side-banner"><img src="Banner segundario.jpg" alt="Banner secundario"></div>
+  </section>
+
+  <!-- CATEGORÍAS -->
+  <section class="categorias">
+    <h2 class="titulo2rojo" style="font-size:2rem;margin-bottom:1.5rem;color:var(--primary-color);">Categorías</h2>
+
+    <!-- Primera fila -->
+         <div class="categoriatitular1">
+  <div class="categorias-grid">      
+    <div class="categoria-item"><img src="farmacia.jpg" alt="Farmacia"><p>Farmacia</p></div>
+    <div class="categoria-item"><img src="Maternidad_y_bebes.jpg" alt="Maternidad y Bebés"><p>Maternidad y Bebés</p></div>
+    <div class="categoria-item"><img src="Dermatologicos.jpg" alt="Dermocosmética"><p>Dermocosmética</p></div>
+    <div class="categoria-item"><img src="Belleza.jpg" alt="Belleza"><p>Belleza</p></div>
+    <div class="categoria-item"><img src="Aseo_y_cuidado_personal.jpg" alt="Aseo y Cuidado Personal"><p>Aseo y Cuidado Personal</p></div>
+  </div>
+</div>
+
+    <!-- Segunda fila centrada -->
+    <div class="categorias-grid .centrado">
+      <div class="categoria-item"><img src="Naturales_y_homeopaticos.jpg" alt="Naturales y Homeopáticos"><p>Naturales y Homeopáticos</p></div>
+      <div class="categoria-item"><img src="Alimentos_ y_bebidas.jpg" alt="Alimentos y Bebidas"><p>Alimentos y Bebidas</p></div>
+      <div class="categoria-item"><img src="suplementos.jpg" alt="Suplementos"><p>Suplementos y Vitaminas</p></div>
+      <div class="categoria-item"><img src="salud_sexual.jpg" alt="Salud Sexual"><p>Salud Sexual</p></div>
+    <div class="categoria-item"><img src="Ortopedia_y_movilidad.jpg" alt="Ortopedia y movilidad.jpg"/><p>Ortopedia y Movilidad</p></div>
+    </div>
+  </section>
+
+  <!-- ASESORÍA -->
+  <section class="asesoria">
+    <div class="asesoria-box">
+      <img src="Asesoria y consulta farmaceutica.png" alt="Asesoría Farmacéutica">
+      <div>
+        <h3 style="color:var(--primary-color);font-size:1.25rem;margin-bottom:.5rem;font-weight:700;">Asesoría y Consulta Farmacéutica</h3>
+        <p style="font-size:.95rem;color:var(--text-dark);">Recibe orientación profesional para el uso adecuado de medicamentos, tratamientos y salud personal.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
